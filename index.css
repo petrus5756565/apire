@@ -1,0 +1,79 @@
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Page background: Naruto-themed image with dark gradient overlay */
+html, body { height: 100%; }
+body {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #0a0505;
+  background-image: linear-gradient(135deg, rgba(30,10,5,0.65), rgba(10,5,2,0.65)), url('https://source.unsplash.com/1920x1080/?anime,fire');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fffaf0;
+}
+
+.scene {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.panel {
+  width: min(1200px, 96%);
+  background: linear-gradient(180deg, rgba(10,6,2,0.72), rgba(20,10,6,0.6));
+  border: 1px solid rgba(255, 140, 0, 0.08);
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+
+header { margin-bottom: 20px; }
+
+.subtitle {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255,140,0,0.12);
+  color: #ffd8a8;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 12px 0 6px;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.02;
+  background: linear-gradient(90deg,#ff8a00,#ffd54d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+p { color: rgba(255,255,255,0.9); max-width: 64ch; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 18px; }
+
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,140,0,0.06);
+  padding: 16px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.character { width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 10px; }
+.character-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+.name { font-weight: 700; color: #fff6e6; text-transform: uppercase; font-size: 0.95rem; }
+
+@media (max-width: 720px) {
+  .panel { padding: 300px; }
+  .cards { gap: 102px; }
+}
